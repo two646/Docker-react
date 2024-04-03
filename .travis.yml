@@ -3,11 +3,11 @@ services:
   - docker
 
 before_install:
-  - docker build -t tim/docker-react -f dockerfile.dev .
+  - docker build -t tim/docker-react .
 
 
 script:
-  - docker run -e CI=true tim/docker-react npm run test 
+  - docker run tim/docker-react
 
 deploy:
   provider: elasticbeanstalk
